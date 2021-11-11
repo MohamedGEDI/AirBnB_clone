@@ -10,7 +10,7 @@ import datetime
 
 class BaseModel:
     """Constructor to contain public instances"""
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """id, created_at, updated_at instances created"""
         id = str(uuid.uuid4())
         self.id = id
@@ -18,6 +18,12 @@ class BaseModel:
         created_at = str(created_at.strftime("%Y-%m-%dT%H:%M:%S.%f"))
         self.created_at = created_at
         self.updated_at = created_at
+        if kwargs is not None:
+            for key, value in kwargs.items():
+                if key == "__class__":
+                    continue
+                else:
+                    setattr(BaseModel, key, value)
 
     def save(self):
         """update time when saving"""
