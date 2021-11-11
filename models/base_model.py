@@ -23,7 +23,7 @@ class BaseModel:
                 if key == "__class__":
                     continue
                 else:
-                    setattr(BaseModel, key, value)
+                    setattr(self, key, value)
 
     def save(self):
         """update time when saving"""
