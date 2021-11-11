@@ -2,7 +2,7 @@
 """Module for Base class
 Contains the Base class for the AirBnB clone console.
 """
-
+import json
 import uuid
 from datetime import datetime
 
@@ -54,3 +54,19 @@ class BaseModel:
         my_dict["created_at"] = my_dict["created_at"].isoformat()
         my_dict["updated_at"] = my_dict["updated_at"].isoformat()
         return my_dict
+
+    @staticmethod
+    def to_json(base_dict):
+        if base_dict is None or base_dict == []:
+            return []
+        elif len(base_dict) <= 0:
+            return []
+        else:
+            return json.JSONEncoder().encode(base_dict)
+
+    @staticmethod
+    def from_json(json_string):
+        if json_string is None or (len(json_string.strip()) <= 0):
+            return []
+        else:
+            json.JSONDecoder().decode(json_string)
