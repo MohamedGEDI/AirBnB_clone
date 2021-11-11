@@ -1,10 +1,20 @@
 #!/usr/bin/python3
+"""test Base Model"""
 import unittest
+from models.base_model import BaseModel
+import datetime
 
 
-class MyTestCase(unittest.TestCase):
-    def test_something(self):
-        self.assertEqual(True, False)  # add assertion here
+"""test Class """
+
+
+class TestBaseModel(unittest.TestCase):
+    """test Basemodel"""
+    def test_id(self):
+        """test if id exists"""
+        base = BaseModel()
+        self.assertIsNotNone(base.id, "Id must exist")  # add assertion here
+
 
 
 if __name__ == '__main__':
