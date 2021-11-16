@@ -9,7 +9,7 @@ class FileStorage:
 
     """Class for serializtion and deserialization of base classes."""
     __file_path = "file.json"
-    __objects = {}
+    __objects = dict()
 
     def all(self):
         """Returns __objects dictionary."""

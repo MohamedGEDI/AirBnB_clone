@@ -2,7 +2,6 @@
 """test Base Model"""
 import unittest
 from models.base_model import BaseModel
-import datetime
 
 
 """test Class """
@@ -14,6 +13,8 @@ class TestBaseModel(unittest.TestCase):
         """test if id exists"""
         base = BaseModel()
         self.assertIsNotNone(base.id, "Id must exist")  # add assertion here
+
+
 
 
 
