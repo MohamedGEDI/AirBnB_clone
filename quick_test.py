@@ -9,3 +9,8 @@ if __name__ == "__main__":
     print(my_model)
     with open(file="file.json", encoding="utf-8", mode="w") as fd:
         fd.write(my_model.to_json(my_model.to_dict()))
+
+    print("from json to string")
+
+    with open(file="file.json") as fd:
+        print(my_model.from_json(fd.read()))
