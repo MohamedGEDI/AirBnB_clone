@@ -22,6 +22,14 @@ button:hover {
     opacity: 90%;
 }
 
+
+
+.filters .amenities{
+	height: 100%;
+	width: 25%;
+	float: left;
+}
+
 .filters .locations{
 	height: 100%;
 	width: 25%;
@@ -29,9 +37,29 @@ button:hover {
 	float: left;
 }
 
-.filters .amenities{
-	height: 100%;
-	width: 25%;
-	float: left;
+.filters .locations h3 {
+	font-weight: 600;
+	padding-left: 40px;
+	margin: 10px 0;
+}
+
+.filters .amenities h3 {
+    font-weight: 600;
+	padding-left: 40px;
+	margin: 10px 0;
+}
+
+.filters .locations h4{ 
+	font-weight: 400;
+	font-size: 14px;
+	padding-left: 40px;
+	margin: 10px 0;
+}
+
+.filters .amenities h4 {
+    font-weight: 400;
+	font-size: 14px;
+	padding-left: 40px;
+	margin: 10px 0;
 }
 
