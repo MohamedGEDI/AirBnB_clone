@@ -149,20 +149,17 @@ class HBNBCommand(cmd.Cmd):
                     del FileStorage.all(self)[key]
                     FileStorage.save(self)
 
-    def do_all(self, line):
+    def do_all(self, arg):
         """Prints all string representation of all instances.
         """
-        if line != "":
-            words = line.split(' ')
-            if words[0] not in FileStorage.classes(self):
-                print("** class doesn't exist **")
-            else:
-                l = [str(obj) for key, obj in FileStorage.all(self).items()
-                     if type(obj).__name__ == words[0]]
-                print(l)
-        else:
-            l = [str(obj) for key, obj in FileStorage.all(self).items()]
-            print(l)
+        arg = arg.strip("\"'")
+        result = []
+        all = FileStorage.all(self)
+        if not arg:
+            for key in all.keys():
+                result.append(all[key].__str__())
+            print(result)
+            return
 
     def do_count(self, line):
         """Counts the instances of a class.
